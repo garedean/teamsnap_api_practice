@@ -7,8 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <nav>
+    <img src="https://www.teamsnap.com/assets/img/logo.png" id="nav-brand-image">
+    <ul>
+      <li>Home</li>
+      <li>Roster</li>
+      <li>Schedule</li>
+      <li>Availability</li>
+      <li>Tracking</li>
+      <li>Payments</li>
+      <li>Statistics</li>
+      <li>Refreshments</li>
+      <li>Media</li>
+      <li>Messages</li>
+      <li>Team Store</li>
+      <li>Preferences</li>
+      <li>Manager</li>
+    </ul>
+  </nav>
+  <div class="container">
+    <%= yield %>
+  </div>
 </body>
 </html>
