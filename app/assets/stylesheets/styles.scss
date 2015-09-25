@@ -1,31 +1,79 @@
 @import "bootstrap";
 
+* {
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+/* Scrollbar Styles */
+/*==================*/
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eee;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.flash {
+  position: fixed;
+  top:0;right:0;left:0;
+  height: 50px;
+  background: #aaa;
+  z-index: 9999;
+}
+
 .container {
-  margin-left: 230px;
+  padding-left: 230px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+header {
+  position: fixed;
+  top:0;left:0;right:0;
+  height: 60px;
+  background: #efefef;
+  z-index: 9998;
+  .header-logo {
+    margin: 10px 0 0 15px;
+    display: block;
+    float: left;
+    img {
+      width: 150px;
+    }
+  }
+  .header-logo {
+    width: 150px;
+  }
 }
 
 nav {
   position: fixed;
-  top:0;left:0;bottom:0;
+  top:60px;left:0;bottom:0;
   width: 230px;
   background: white;
   box-shadow: 0 0 1.5em rgba(0,0,0,0.2);
-  #nav-brand-image {
-    width: 180px;
+  overflow-y: auto;
+  a {
     display: block;
-    margin: 20px auto;
   }
   ul {
     li {
       padding-left: 30px;
       color: #888;
-      font-size: 1.5em;
-      line-height: 60px;
+      font-size: 1.4em;
+      line-height: 59px;
       font-weight: 300;
       border-bottom: 1px solid #ddd;
-      &:first-child {
-        border-top: 1px solid #ddd;
-      }
+
       &:hover {
         color: #08c;
         background: #fafafa;

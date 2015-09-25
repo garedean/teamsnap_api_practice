@@ -7,8 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+
+    <%= link_to root_path, class: "header-logo" do %>
+      <img src="https://www.teamsnap.com/assets/img/logo.png">
+    <% end %>
+
+    <%= flash[:notice] %>
+  </header>
   <nav>
-    <img src="https://www.teamsnap.com/assets/img/logo.png" id="nav-brand-image">
     <ul>
       <li>Home</li>
       <li>Roster</li>
@@ -24,6 +31,12 @@
       <li>Preferences</li>
       <li>Manager</li>
     </ul>
+    <% if current_user %>
+      Welcome, <%= current_user.email %>
+      <%= link_to "Sign out", signout_path %>
+    <% else %>
+      <%= link_to "Sign in with TeamSnap", "/auth/teamsnap" %>
+    <% end %>
   </nav>
   <div class="container">
     <%= yield %>
