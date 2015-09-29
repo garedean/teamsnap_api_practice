@@ -10,10 +10,21 @@
   <header>
 
     <%= link_to root_path, class: "header-logo" do %>
-      <img src="https://www.teamsnap.com/assets/img/logo.png">
+      <img src="http://marketing-cdn.teamsnap.com/teamsnap_logo_white.png">
     <% end %>
 
-    <%= flash[:notice] %>
+    <% flash.each do |key, value| %>
+      <%= content_tag :div, value, class: "flash #{key}" %>
+    <% end %>
+
+    <span class="user-auth-wrapper">
+      <% if current_user %>
+        <%= current_user.email %> |
+        <%= link_to "Sign out", signout_path %>
+      <% else %>
+        <%= link_to "Sign in with TeamSnap", "/auth/teamsnap" %>
+      <% end %>
+    </span>
   </header>
   <nav>
     <ul>
@@ -31,12 +42,6 @@
       <li>Preferences</li>
       <li>Manager</li>
     </ul>
-    <% if current_user %>
-      Welcome, <%= current_user.email %>
-      <%= link_to "Sign out", signout_path %>
-    <% else %>
-      <%= link_to "Sign in with TeamSnap", "/auth/teamsnap" %>
-    <% end %>
   </nav>
   <div class="container">
     <%= yield %>
