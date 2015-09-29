@@ -85,11 +85,14 @@ nav {
       line-height: 59px;
       font-weight: 300;
       border-bottom: 1px solid #ddd;
-
       &:hover {
         color: #08c;
-        background: #fafafa;
+        background: #f9f9f9;
         cursor: pointer;
+      }
+      &.active {
+        color: #08c;
+        font-weight: 500;
       }
     }
   }
