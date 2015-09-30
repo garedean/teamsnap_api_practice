@@ -166,8 +166,8 @@ GEM
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
     slop (3.6.0)
-    sprockets (3.3.4)
-      rack (~> 1.0)
+    sprockets (3.3.5)
+      rack (> 1, < 3)
     sprockets-rails (2.3.3)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
@@ -219,7 +219,7 @@ DEPENDENCIES
   pry
   rails (= 4.2.4)
   sass-rails (~> 5.0)
-  teamsnap_rb (~> 1.3.1)
+  teamsnap_rb
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)

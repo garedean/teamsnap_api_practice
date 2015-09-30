@@ -1,7 +1,12 @@
-@import "bootstrap";
-
 * {
   -webkit-font-smoothing: subpixel-antialiased;
+  &:focus {
+    outline: none !important;
+  }
+}
+
+html, body {
+  height: 100%;
 }
 /* Scrollbar Styles */
 /*==================*/
@@ -32,9 +37,18 @@
   z-index: 9999;
 }
 
-.container {
+.container-fluid {
   padding-top: 60px;
-  padding-left: 230px;
+  padding-left: 245px;
+  background: #f8f8fb;
+  height: 100%;
+}
+
+.welled {
+  background: white;
+  border-radius: 3px;
+  border-bottom: 2px solid #ddd;
+  padding: 15px;
 }
 
 html {
@@ -46,7 +60,7 @@ header {
   top:0;left:0;right:0;
   height: 60px;
   color: white;
-  background: #236aac;
+  background: #008cba;
   z-index: 9998;
   a {
     color: white;
@@ -72,7 +86,7 @@ nav {
   top:60px;left:0;bottom:0;
   width: 230px;
   background: white;
-  box-shadow: 0 0 1.5em rgba(0,0,0,0.2);
+  // box-shadow: 0 0 1.5em rgba(0,0,0,0.2);
   overflow-y: auto;
   a {
     display: block;
@@ -81,10 +95,10 @@ nav {
     li {
       padding-left: 30px;
       color: #888;
-      font-size: 1.4em;
+      font-size: 1.2em;
       line-height: 59px;
       font-weight: 300;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid #eee;
       &:hover {
         color: #08c;
         background: #f9f9f9;
@@ -96,6 +110,22 @@ nav {
       }
     }
   }
+}
+
+.admin-header {
+  padding: 25px 0;
+  h1 {
+    float: left;
+    margin: 0;
+    color: #444;
+  }
+  button {
+    height: 40px;
+  }
+}
+
+h1 {
+  font-weight: 300;
 }
 
 .user-auth-wrapper {

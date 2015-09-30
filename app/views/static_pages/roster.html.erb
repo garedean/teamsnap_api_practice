@@ -1,0 +1,41 @@
+<section class="admin-header clearfix">
+  <h1>Roster</h1>
+  <div class="pull-right">
+    <button type="button" class="btn btn-default btn-success">New Player</button>
+    <button type="button" class="btn btn-default">Import Players</button>
+  </div>
+</section>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="welled">
+      <% if session[:token] %>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Jersey #</th>
+              <th>Name</th>
+              <th>Contact Info</th>
+              <th>Position</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @team.members.each do |member| %>
+              <tr>
+                <td><%= member.jersey_number %></td>
+                <td><%= member.first_name %> <%= member.last_name %></td>
+                <td><%= team_member_email(member) %></td>
+                <td><%= member.position %></td>
+                <td>
+                  <%= link_to "Edit",   "#" %> |
+                  <%= link_to "Delete", "#" %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</div>
