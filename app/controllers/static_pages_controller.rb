@@ -1,5 +1,3 @@
-require 'TeamSnap'
-
 class StaticPagesController < ApplicationController
   layout "sign_in", only: [:sign_in]
 
