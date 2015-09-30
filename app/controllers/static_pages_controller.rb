@@ -1,6 +1,10 @@
 class StaticPagesController < ApplicationController
   layout "sign_in", only: [:sign_in]
 
+  def sign_in
+    session[:test] = "test"
+  end
+
   def roster
     begin
       TeamSnap.init(:token => session[:token])
@@ -8,7 +12,7 @@ class StaticPagesController < ApplicationController
       @team = TeamSnap::Team.find(1340251)
     rescue
       flash[:notice] = nil
-      #destroy_session
+      destroy_session
     end
   end
 end
