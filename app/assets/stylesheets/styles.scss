@@ -8,6 +8,22 @@
 html, body {
   height: 100%;
 }
+
+.table {
+  font-size: 1.1em;
+  tbody {
+    tr {
+      height: 60px;
+      td {
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.center {
+  text-align: center;
+}
 /* Scrollbar Styles */
 /*==================*/
 

@@ -17,7 +17,7 @@
               <th>Name</th>
               <th>Contact Info</th>
               <th>Position</th>
-              <th>Actions</th>
+              <th class="center">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -28,7 +28,7 @@
                 <td><%= member.first_name %> <%= member.last_name %></td>
                 <td><%= team_member_email(member) %></td>
                 <td><%= member.position %></td>
-                <td>
+                <td class="center">
                   <%= link_to "Edit",   "#" %> |
                   <%= link_to "Delete", "#" %>
                 </td>

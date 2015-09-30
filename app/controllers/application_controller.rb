@@ -17,6 +17,6 @@ class ApplicationController < ActionController::Base
   def destroy_session
     session[:user_id] = nil
     session[:token]   = nil
-    redirect_to sign_in_path
+    redirect_to sign_in_path, confirm: "Your session expired. Please sign in."
   end
 end
