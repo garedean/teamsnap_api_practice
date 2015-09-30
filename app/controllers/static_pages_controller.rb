@@ -8,7 +8,7 @@ class StaticPagesController < ApplicationController
       @team = TeamSnap::Team.find(1340251)
     rescue
       flash[:notice] = nil
-      destroy_session
+      #destroy_session
     end
   end
 end
