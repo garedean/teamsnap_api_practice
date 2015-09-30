@@ -90,10 +90,16 @@ nav {
   overflow-y: auto;
   a {
     display: block;
+    padding-left: 30px;
+    &:hover {
+      text-decoration: none;
+    }
+    &:focus {
+      text-decoration: none;
+    }
   }
   ul {
-    li {
-      padding-left: 30px;
+    a {
       color: #888;
       font-size: 1.2em;
       line-height: 59px;

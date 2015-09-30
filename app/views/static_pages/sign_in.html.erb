@@ -1,1 +1,9 @@
-<%= link_to "Sign in with TeamSnap", "/auth/teamsnap", id: "sign-in-button" %>
+<%= link_to "/auth/teamsnap", id: "sign-in-button" do %>
+  Sign in with <strong>TeamSnap</strong>
+<% end %>
+
+<script>
+  $("#sign-in-button").click(function() {
+    $(this).addClass("clicked");
+  });
+</script>

@@ -3,13 +3,11 @@ class SessionsController < ApplicationController
     user = User.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"]) || User.create_with_omniauth(auth_hash)
     session[:user_id] = user.id
     session[:token]   = auth_token
-    redirect_to root_path, notice: "Welcome, #{current_user.email}!"
+    redirect_to roster_path, notice: "Boop. Beep boop. System ready."
   end
 
   def destroy
-    session[:user_id] = nil
-    session[:token]   = nil
-    redirect_to sign_in_path
+    destroy_session
   end
 
   protected

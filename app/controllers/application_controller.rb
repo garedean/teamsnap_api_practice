@@ -13,4 +13,10 @@ class ApplicationController < ActionController::Base
   def require_login
     redirect_to sign_in_path unless session[:token]
   end
+
+  def destroy_session
+    session[:user_id] = nil
+    session[:token]   = nil
+    redirect_to sign_in_path
+  end
 end
