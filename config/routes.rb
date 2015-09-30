@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   root 'static_pages#roster'
+
+  # Note: teamsnap callback url must be in format, http://localhost:3000/auth/teamsnap/callback
   get '/auth/teamsnap/callback', to: 'sessions#create'
-  get 'sign_in',      to: 'static_pages#sign_in',      as: 'sign_in'
-  get '/signout', to: 'sessions#destroy', as: 'signout'
+  get 'sign_in',  to: 'static_pages#sign_in', as: 'sign_in'
+  get '/signout', to: 'sessions#destroy',     as: 'signout'
 
   get 'home',         to: 'static_pages#home',         as: 'home'
   get 'roster',       to: 'static_pages#roster',       as: 'roster'

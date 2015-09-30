@@ -18,12 +18,8 @@
     <% end %>
 
     <span class="user-auth-wrapper">
-      <% if current_user %>
-        <%= current_user.email %> |
-        <%= link_to "Sign out", signout_path %>
-      <% else %>
-        <%= link_to "Sign in with TeamSnap", "/auth/teamsnap" %>
-      <% end %>
+      <%= current_user.email %> |
+      <%= link_to "Sign out", signout_path %>
     </span>
   </header>
   <nav>
