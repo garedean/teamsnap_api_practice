@@ -1,18 +1,17 @@
 class StaticPagesController < ApplicationController
   layout "sign_in", only: [:sign_in]
 
-  def sign_in
-    puts "==============================="
-    puts session[:test]
-    puts session[:token]
-    TeamSnap.init(:token => session[:token]) if session[:token]
-    #puts TeamSnap::Team.find(1340251)
-    puts "==============================="
-  end
-
   def roster
+    puts "****************************************"
+
+    puts "Auth token: #{auth_token}"
+    puts "User id: #{session[:user_id]}"
+
+    puts "****************************************"
+
     begin
       TeamSnap.init(:token => session[:token])
+      puts "Team: #{TeamSnap::Team.find(1340251)}"
       #@team = TeamSnap::Team.find(1344217)
       @team = TeamSnap::Team.find(1340251)
     rescue
