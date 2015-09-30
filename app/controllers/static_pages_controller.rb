@@ -4,20 +4,10 @@ class StaticPagesController < ApplicationController
   layout "sign_in", only: [:sign_in]
 
   def roster
-    # debugging
-    if false
-      puts "****************************************"
-      puts "Auth token: #{session[:token]}"
-      puts "User id: #{session[:user_id]}"
-      puts TeamSnap.init(:token => session[:token])
-      puts "****************************************"
-    end
-
     begin
       TeamSnap.init(:token => session[:token])
-      puts "Team: #{TeamSnap::Team.find(1340251)}"
-      #@team = TeamSnap::Team.find(1344217)
-      @team = TeamSnap::Team.find(1340251)
+      @team = TeamSnap::Team.find(session[:site_id])
+      flash[:notice] = "Beep bop, boop. System ready."
     rescue
       flash[:notice] = "Something prevented signing in. Please try again."
       destroy_session

@@ -14,6 +14,7 @@ gem 'teamsnap_rb'
 gem 'conglomerate'
 gem 'omniauth'
 gem 'omniauth-teamsnap', '~> 1.0.0'
+gem 'httparty', '~> 0.13.7'
 
 group :development, :test do
   gem 'byebug'
