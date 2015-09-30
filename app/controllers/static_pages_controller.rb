@@ -3,8 +3,8 @@ class StaticPagesController < ApplicationController
 
   def sign_in
     puts "==============================="
-    puts session[:test]    = "test"
-    puts session[:token]   = auth_token
+    puts session[:test]
+    puts session[:token]
     TeamSnap.init(:token => session[:token])
     puts TeamSnap::Team.find(1340251)
     puts "==============================="
