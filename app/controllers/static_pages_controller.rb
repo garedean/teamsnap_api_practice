@@ -1,5 +1,4 @@
 class StaticPagesController < ApplicationController
-  include TeamSnap
   layout "sign_in", only: [:sign_in]
 
   def roster
