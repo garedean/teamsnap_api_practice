@@ -2,7 +2,9 @@ class StaticPagesController < ApplicationController
   layout "sign_in", only: [:sign_in]
 
   def sign_in
+    puts "====================================================="
     session[:test] = "test"
+    puts session[:test]
   end
 
   def roster
