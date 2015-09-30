@@ -16,10 +16,10 @@ class StaticPagesController < ApplicationController
     begin
       TeamSnap.init(:token => session[:token])
       puts "Team: #{TeamSnap::Team.find(1340251)}"
-      @team = TeamSnap::Team.find(1344217)
-      #@team = TeamSnap::Team.find(1340251)
+      #@team = TeamSnap::Team.find(1344217)
+      @team = TeamSnap::Team.find(1340251)
     rescue
-      flash[:notice] = nil
+      flash[:notice] = "Something prevented signing in. Please try again."
       destroy_session
     end
   end
