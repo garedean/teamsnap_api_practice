@@ -4,22 +4,22 @@
   </p>
 
   <ol>
-    <li>Authenticate with TeamSnap via 3-legged OAuth</li>
+    <li>Authenticate the user with TeamSnap via 3-legged OAuth</li>
     <li>Display a list of the team's players on the 'Roster' tab</li>
   </ol>
 
   <p>
-    Logging into the site <em>should</em> work for any team (though the roster page will only show one team ).
-  </p>
-
-  <p>
-    You can also login to a test account previously set up:
+    You can login with your own TeamSnap test site credentials or use one that I previously set up:
   </p>
 
   <ul>
     <li>username: <strong>team@winterfell.com</strong></li>
     <li>password: <strong>123abc!!</strong></li>
   </ul>
+
+  <p>
+    Lastly, this is a work in progress: automated tests, refactoring, and optimizations are in the works. Thanks for looking!
+  </p>
 
   <%= link_to "/auth/teamsnap", id: "sign-in-button" do %>
     Sign in with <strong>TeamSnap</strong>
