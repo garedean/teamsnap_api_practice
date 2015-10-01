@@ -8,7 +8,7 @@ class StaticPagesController < ApplicationController
       TeamSnap.init(:token => session[:token])
       @team = TeamSnap::Team.find(session[:site_id])
     rescue
-      flash[:notice] = "Something prevented signing in. Please try again."
+      flash[:notice] = "Something prevented signing in. Please clear your cookies and try again."
       destroy_session
     end
   end

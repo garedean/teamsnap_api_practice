@@ -1,5 +1,5 @@
 $(document).on('page:change', function() {
-  $('.flash').delay(2000).fadeOut(800);
+  $('.flash, .sign-in-flash').delay(2000).fadeOut(800);
   setActiveTab();
 });
 
