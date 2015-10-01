@@ -5,18 +5,7 @@ class SessionsController < ApplicationController
 
     session[:user_id] = user.id
     session[:token]   = auth_token
-
-    token = auth_token
-    auth  = "Bearer " + token
-    response = HTTParty.get('https://api.teamsnap.com/v3/me', :headers => { "Authorization" => auth} )
-    parsed_response = JSON.parse(response.body)
-
-    user_id = parsed_response["collection"]["items"].first["data"].first["value"]
-
-    response2 = HTTParty.get("https://api.teamsnap.com/v3/teams/search?user_id=#{user_id}", :headers => { "Authorization" => auth} )
-
-    parsed_response2 = JSON.parse(response2.body)
-    session[:site_id] = parsed_response2["collection"]["items"].first["data"].first["value"]
+    session[:site_id] ||= get_site_id(get_user_id)
 
     redirect_to roster_path, notice: "Beep bop, boop. System ready."
   end
@@ -37,10 +26,18 @@ class SessionsController < ApplicationController
   end
 
   def set_session_token
-    session[:token]   = auth_token
+    session[:token] = auth_token
   end
 
-  def get_client_id
+  def get_user_id
+    user_data = HTTParty.get('https://api.teamsnap.com/v3/me', :headers => { "Authorization" => "Bearer " + auth_token })
 
+    JSON.parse(user_data.body)["collection"]["items"].first["data"].first["value"]
+  end
+
+  def get_site_id(user_id)
+    team_data = HTTParty.get("https://api.teamsnap.com/v3/teams/search?user_id=#{user_id}", :headers => { "Authorization" => "Bearer " + auth_token} )
+
+    JSON.parse(team_data.body)["collection"]["items"].first["data"].first["value"]
   end
 end

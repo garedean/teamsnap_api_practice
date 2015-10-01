@@ -22,7 +22,6 @@
           </thead>
           <tbody>
             <% @team.members.each do |member| %>
-            <%#= member.inspect %>
               <tr>
                 <td><%= member.jersey_number %></td>
                 <td><%= member.first_name %> <%= member.last_name %></td>
