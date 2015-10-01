@@ -2,14 +2,24 @@ body {
   height: 100%;
 }
 
-#sign-in-button {
-  line-height: 60px;
-  height: 60px;
-  width: 35%;
-  min-width: 250px;
+#sign-in-wrapper {
   position: absolute;
+  height: 390px;
+  width: 700px;
   top:-70px;right:0;bottom:0;left:0;
   margin: auto;
+  background: #f8f8f8;
+  border-radius: 5px;
+  padding: 40px;
+}
+
+#sign-in-button {
+  display: block;
+  line-height: 60px;
+  height: 60px;
+  width: 70%;
+  margin: 20px auto 0;
+  min-width: 250px;
   border-radius: 5px;
   color: white;
   background-color: #008cba;

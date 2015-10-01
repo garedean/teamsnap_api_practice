@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
     parsed_response2 = JSON.parse(response2.body)
     session[:site_id] = parsed_response2["collection"]["items"].first["data"].first["value"]
 
-    redirect_to roster_path
+    redirect_to roster_path, notice: "Beep bop, boop. System ready."
   end
 
   def destroy
